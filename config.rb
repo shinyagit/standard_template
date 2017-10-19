@@ -40,13 +40,26 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
+activate :livereload
+
+# Build-specific configuration
 configure :build do
-  compass_config do |config|
-      config.line_comments = false
-  end
   activate :minify_html
   activate :minify_css
   activate :minify_javascript
+
+  # リポジトリ名を host に設定しておく
+  # こうすることで stylesheet_link_tag などで展開されるパスが
+  # /test-middleman/stylesheets/normalize.css
+  # のようになる
+  #activate :asset_host, :host => "/test-middleman-page"
 end
 
-activate :livereload
+
+# デプロイの設定
+# 今回は gh-pages を使用するので branch に 'gh-pages' を設定する
+# activate :deploy do |deploy|
+#   deploy.build_before = true
+#   deploy.deploy_method = :git
+#   deploy.branch = 'gh-pages'
+# end
