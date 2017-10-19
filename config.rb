@@ -53,4 +53,4 @@ configure :build do
   end
 end
 
-active :livereload
+activate :livereload
