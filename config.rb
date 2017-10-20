@@ -52,7 +52,9 @@ configure :build do
   # こうすることで stylesheet_link_tag などで展開されるパスが
   # /test-middleman/stylesheets/normalize.css
   # のようになる
-  #activate :asset_host, :host => "/test-middleman-page"
+  # activate :asset_host, :host => "/your_repository_name"
+　　　　# これは必要か不明
+  # set :relative_links, true
 end
 
 
